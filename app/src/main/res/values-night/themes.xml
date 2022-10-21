@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.ComposeToDoApp" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/black</item>
+    </style>
+</resources>
+
+<!--버전이 바껴 구현방식이 변한것같다... 알아보도록 하자-->
