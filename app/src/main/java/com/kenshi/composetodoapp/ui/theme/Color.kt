@@ -17,9 +17,9 @@ val MediumPriorityColor = Color(0xFFFFC114)
 val HighPriorityColor = Color(0xFFFF4646)
 val NonePriority = MediumGray
 
-val Colors.splashScreenBackgroud: Color
-    //@Composable
-    get() = if(isLight) Purple700 else Color.Black
+//val Colors.splashScreenBackgroud: Color
+//    //@Composable
+//    get() = if(isLight) Purple700 else Color.Black
 
 // 이런식으로 attr을 대체할 수 있는건가
 val Colors.taskItemTextColor: Color

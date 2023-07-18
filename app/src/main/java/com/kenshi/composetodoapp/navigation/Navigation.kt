@@ -7,10 +7,9 @@ import androidx.compose.runtime.remember
 import androidx.navigation.NavHostController
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.kenshi.composetodoapp.navigation.destinations.listComposable
-import com.kenshi.composetodoapp.navigation.destinations.splashComposable
 import com.kenshi.composetodoapp.navigation.destinations.taskComposable
 import com.kenshi.composetodoapp.ui.viewmodels.SharedViewModel
-import com.kenshi.composetodoapp.util.Constants.SPLASH_SCREEN
+import com.kenshi.composetodoapp.util.Constants.LIST_SCREEN
 
 @ExperimentalAnimationApi
 @ExperimentalMaterialApi
@@ -29,12 +28,12 @@ fun SetUpNavigation(
     //NavHost(
     AnimatedNavHost(
         navController = navController,
-        startDestination = SPLASH_SCREEN
+        startDestination = LIST_SCREEN
     ) {
-        splashComposable(
-            //how to navigate from splash screen
-            navigateToListScreen = screen.splash
-        )
+//        splashComposable(
+//            //how to navigate from splash screen
+//            navigateToListScreen = screen.splash
+//        )
         listComposable(
             //how to navigate from list screen
             navigateToTaskScreen = screen.list,

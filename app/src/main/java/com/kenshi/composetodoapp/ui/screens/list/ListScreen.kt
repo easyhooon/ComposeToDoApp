@@ -13,7 +13,6 @@ import com.kenshi.composetodoapp.ui.theme.fabBackgroundColor
 import com.kenshi.composetodoapp.ui.viewmodels.SharedViewModel
 import com.kenshi.composetodoapp.util.Action
 import com.kenshi.composetodoapp.util.SearchAppBarState
-import kotlinx.coroutines.launch
 
 
 @ExperimentalMaterialApi
@@ -152,24 +151,33 @@ fun DisplaySnackBar(
     // mean : this function will be triggered on each every recomposition inside our composable tree
     // handleDatabaseActions()
 
-    val scope = rememberCoroutineScope()
+    // val scope = rememberCoroutineScope()
     // whenever the action changes, then Launched Effect will be triggered
 
     //onCompleted(replace handleDatabaseAction) will be called in LaunchedEffect
     LaunchedEffect(key1 = action) {
         if (action != Action.NO_ACTION) {
             // show snackBar
-            scope.launch {
-                val snackBarResult = scaffoldState.snackbarHostState.showSnackbar(
-                    message = setMessage(action = action, taskTitle = taskTitle),
-                    actionLabel = setActionLabel(action = action)
-                )
-                undoDeletedTask(
-                    action = action,
-                    snackBarResult = snackBarResult,
-                    onUndoClicked = onUndoClicked
-                )
-            }
+//            scope.launch {
+//                val snackBarResult = scaffoldState.snackbarHostState.showSnackbar(
+//                    message = setMessage(action = action, taskTitle = taskTitle),
+//                    actionLabel = setActionLabel(action = action)
+//                )
+//                undoDeletedTask(
+//                    action = action,
+//                    snackBarResult = snackBarResult,
+//                    onUndoClicked = onUndoClicked
+//                )
+//            }
+            val snackBarResult = scaffoldState.snackbarHostState.showSnackbar(
+                message = setMessage(action = action, taskTitle = taskTitle),
+                actionLabel = setActionLabel(action = action)
+            )
+            undoDeletedTask(
+                action = action,
+                snackBarResult = snackBarResult,
+                onUndoClicked = onUndoClicked
+            )
             onComplete(Action.NO_ACTION)
         }
     }
