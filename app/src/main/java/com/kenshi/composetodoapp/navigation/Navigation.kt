@@ -5,7 +5,7 @@ import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.navigation.NavHostController
-import com.google.accompanist.navigation.animation.AnimatedNavHost
+import androidx.navigation.compose.NavHost
 import com.kenshi.composetodoapp.navigation.destinations.listComposable
 import com.kenshi.composetodoapp.navigation.destinations.taskComposable
 import com.kenshi.composetodoapp.ui.viewmodels.SharedViewModel
@@ -26,7 +26,7 @@ fun SetUpNavigation(
     // define our navigation graph
     // to apply accompanist navigation animation
     //NavHost(
-    AnimatedNavHost(
+    NavHost(
         navController = navController,
         startDestination = LIST_SCREEN
     ) {

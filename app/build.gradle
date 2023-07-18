@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace 'com.kenshi.composetodoapp'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.kenshi.composetodoapp"
         minSdk 24
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -67,10 +67,10 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
 
     // Compose Navigation
-    // implementation("androidx.navigation:navigation-compose:2.4.0-alpha08")
+    implementation("androidx.navigation:navigation-compose:2.7.0-beta02")
 
     // Accompanist Navigation Animation
-    implementation "com.google.accompanist:accompanist-navigation-animation:0.22.0-rc"
+//    implementation "com.google.accompanist:accompanist-navigation-animation:0.22.0-rc"
 
     // Room components
     implementation "androidx.room:room-runtime:2.5.2"

@@ -8,8 +8,8 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
+import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.google.accompanist.navigation.animation.composable
 import com.kenshi.composetodoapp.ui.screens.task.TaskScreen
 import com.kenshi.composetodoapp.ui.viewmodels.SharedViewModel
 import com.kenshi.composetodoapp.util.Action
@@ -46,7 +46,7 @@ fun NavGraphBuilder.taskComposable(
             sharedViewModel.getSelectedTask(taskId = taskId)
             // Log.d("getSelectedTask", taskId.toString())
         }
-        // 값이 변 경되고 그 값이 변경 되면 taskScreen recomposition 수행
+        // 값이 변경 되고 그 값이 변경 되면 taskScreen recomposition 수행
         val selectedTask by sharedViewModel.selectedTask.collectAsState()
 
         // whenever taskId changes and this block inside the LaunchedEffect will be triggered

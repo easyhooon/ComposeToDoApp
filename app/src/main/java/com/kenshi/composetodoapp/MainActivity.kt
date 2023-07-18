@@ -8,7 +8,7 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.NavHostController
-import com.google.accompanist.navigation.animation.rememberAnimatedNavController
+import androidx.navigation.compose.rememberNavController
 import com.kenshi.composetodoapp.navigation.SetUpNavigation
 import com.kenshi.composetodoapp.ui.theme.ComposeToDoAppTheme
 import com.kenshi.composetodoapp.ui.viewmodels.SharedViewModel
@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
             ComposeToDoAppTheme {
                 // navController = rememberNavController()
                 //to apply accompanist navigation animation
-                navController = rememberAnimatedNavController()
+                navController = rememberNavController()
                 SetUpNavigation(
                     navController = navController,
                     sharedViewModel = sharedViewModel
